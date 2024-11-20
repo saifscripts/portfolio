@@ -1,4 +1,4 @@
-export const SunIcon = (props: any) => (
+export const SunIcon = (props: { className: string }) => (
   <svg
     aria-hidden="true"
     focusable="false"

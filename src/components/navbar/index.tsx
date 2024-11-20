@@ -53,9 +53,8 @@ export default function Navbar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {menuItems.map((item, index) => (
-          <NavbarItem>
+          <NavbarItem key={`${item}-${index}`}>
             <Link
-              key={`${item}-${index}`}
               color={
                 pathnameWithHash === `/#${item.toLowerCase()}`
                   ? 'primary'

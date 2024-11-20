@@ -1,4 +1,4 @@
-export const MoonIcon = (props: any) => (
+export const MoonIcon = (props: { className: string }) => (
   <svg
     aria-hidden="true"
     focusable="false"
