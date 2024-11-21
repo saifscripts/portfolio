@@ -1,30 +1,19 @@
 'use client';
 
 import { useHash } from '@/contexts/hash.context';
-import { useInView } from 'framer-motion';
+import { useInView, UseInViewOptions } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-export const useHashSync = (hash: string, threshold: number = 0.5) => {
+export const useHashSync = (hash: string, options?: UseInViewOptions) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: threshold });
+  const isInView = useInView(ref, { amount: 0.5, ...options });
   const { setHash } = useHash();
-  const timeoutId = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (isInView) {
-      if (timeoutId.current) clearTimeout(timeoutId.current);
       setHash(hash);
-      timeoutId.current = setTimeout(() => {
-        window.location.hash = hash.replace('#', '');
-      }, 300);
-    } else {
-      if (timeoutId.current) clearTimeout(timeoutId.current);
     }
-
-    return () => {
-      if (timeoutId.current) clearTimeout(timeoutId.current);
-    };
-  }, [isInView, hash, setHash]);
+  }, [isInView, hash]);
 
   return ref;
 };
