@@ -14,6 +14,7 @@ import {
 } from '@nextui-org/navbar';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Background from '../background';
 import { Logo } from './logo';
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
       onMenuOpenChange={setIsMenuOpen}
       className="fixed backdrop-blur-sm data-[menu-open=true]:backdrop-blur-md"
     >
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <Background />
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

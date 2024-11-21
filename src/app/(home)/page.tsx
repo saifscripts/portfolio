@@ -7,7 +7,7 @@ import Skills from '@/components/skills';
 
 export default function Home() {
   return (
-    <div className="scroll-mt-16">
+    <div className="scroll-mt-16 relative">
       <Hero />
       <About />
       <Skills />

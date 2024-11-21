@@ -12,7 +12,7 @@ export default function Hero() {
     <section
       ref={ref}
       id="home"
-      className="relative mt-[64px] sm:mt-0 h-[calc(100svh-64px)] sm:h-screen flex justify-center items-center"
+      className="relative mt-[64px] sm:mt-0 min-h-[calc(100svh-64px)] sm:min-h-screen flex justify-center items-center py-8 sm:py-12"
     >
       <div className="container flex gap-8 flex-col justify-center lg:flex-row lg:items-center lg:justify-between">
         {/* <!-- Hero Content --> */}
@@ -44,7 +44,7 @@ export default function Hero() {
         </div>
 
         {/* <!-- Hero Image --> */}
-        <div className="relative aspect-square rounded-3xl size-80 lg:size-96 ring-4 ring-primary overflow-hidden order-1 lg:order-2">
+        <div className="relative aspect-square rounded-3xl w-full sm:w-auto sm:size-80 lg:size-96 ring-2 ring-primary overflow-hidden order-1 lg:order-2">
           <div className="absolute inset-6 lg:inset-8 z-10 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-3xl overflow-hidden" />
           <Image
             src={avatar}
