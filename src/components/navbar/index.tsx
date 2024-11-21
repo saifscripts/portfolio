@@ -21,10 +21,7 @@ import { Logo } from './logo';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { hash, setHash } = useHash();
-
-  console.log(hash);
-
+  const { hash } = useHash();
   const pathnameWithHash = pathname + hash;
 
   const menuItems = ['About', 'Skills', 'Projects', 'Blogs', 'Contact'];

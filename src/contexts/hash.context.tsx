@@ -8,7 +8,7 @@ const HashContext = createContext<
 >(undefined);
 
 export const HashProvider = ({ children }: { children: React.ReactNode }) => {
-  const [hash, setHash] = useState(window.location.hash);
+  const [hash, setHash] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
