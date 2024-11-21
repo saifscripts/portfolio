@@ -2,7 +2,6 @@
 
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { useHash } from '@/contexts/hash.context';
-import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import {
   NavbarBrand,
@@ -13,7 +12,6 @@ import {
   NavbarMenuToggle,
   Navbar as NextUINavbar,
 } from '@nextui-org/navbar';
-import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Logo } from './logo';
@@ -24,24 +22,31 @@ export default function Navbar() {
   const { hash } = useHash();
   const pathnameWithHash = pathname + hash;
 
-  const menuItems = ['About', 'Skills', 'Projects', 'Blogs', 'Contact'];
+  const menuItems = ['Home', 'About', 'Skills', 'Projects', 'Blogs', 'Contact'];
 
   return (
-    <NextUINavbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <NextUINavbar
+      maxWidth="full"
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="fixed backdrop-blur-sm data-[menu-open=true]:backdrop-blur-md"
+    >
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <NextLink
+          <Link
             href="/#home"
             // onClick={() => setHash('')}
             className="flex items-center gap-2"
+            color="foreground"
           >
             <Logo />
             <p className="font-bold text-inherit">SAIF</p>
-          </NextLink>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -71,11 +76,11 @@ export default function Navbar() {
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
           <Button as={Link} color="primary" href="#">
             Resume
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (

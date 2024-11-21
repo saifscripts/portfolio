@@ -8,6 +8,16 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    container: {
+      center: true, // Centers the container
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
     fontFamily: {
       primary: 'var(--font-jetbrains-mono)',
     },
