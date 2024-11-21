@@ -1,6 +1,7 @@
 'use client';
 
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { useHash } from '@/contexts/hash.context';
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import {
@@ -14,21 +15,17 @@ import {
 } from '@nextui-org/navbar';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Logo } from './logo';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-  const [hash, setHash] = useState('');
+  const { hash, setHash } = useHash();
 
-  useEffect(() => {
-    setHash(window.location.hash);
-  }, []);
+  console.log(hash);
 
   const pathnameWithHash = pathname + hash;
-
-  console.log(pathnameWithHash);
 
   const menuItems = ['About', 'Skills', 'Projects', 'Blogs', 'Contact'];
 
@@ -42,7 +39,7 @@ export default function Navbar() {
         <NavbarBrand>
           <NextLink
             href="/#home"
-            onClick={() => setHash('')}
+            // onClick={() => setHash('')}
             className="flex items-center gap-2"
           >
             <Logo />
@@ -66,7 +63,7 @@ export default function Navbar() {
                   ? 'always'
                   : 'active'
               }
-              onClick={() => setHash(`#${item.toLowerCase()}`)}
+              //   onClick={() => setHash(`#${item.toLowerCase()}`)}
             >
               {item}
             </Link>
@@ -102,7 +99,7 @@ export default function Navbar() {
               }
               onClick={() => {
                 setIsMenuOpen(false);
-                setHash(`#${item.toLowerCase()}`);
+                // setHash(`#${item.toLowerCase()}`);
               }}
             >
               {item}
