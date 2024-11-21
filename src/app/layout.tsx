@@ -22,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${jetBrainsMono.variable} antialiased relative bg-background`}
-      >
+      <body className={`${jetBrainsMono.variable} antialiased relative`}>
         <Background />
         <Providers>{children}</Providers>
       </body>
