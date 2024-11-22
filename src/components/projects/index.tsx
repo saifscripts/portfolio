@@ -8,6 +8,8 @@ import { Tooltip } from '@nextui-org/tooltip';
 import { Github, SquareArrowOutUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Fragment } from 'react';
 
 const projectsData = [
   {
@@ -80,7 +82,7 @@ const projectsData = [
 
 export default function Projects() {
   const ref = useHashSync('#projects');
-
+  const router = useRouter();
   return (
     <Section ref={ref} id="projects">
       <SectionHeader
@@ -90,11 +92,11 @@ export default function Projects() {
       />
       <div className="space-y-8">
         {projectsData.map((project, index) => (
-          <>
+          <Fragment key={project.slug}>
             <div className="py-4 group hover:bg-default-300/30 rounded-xl">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="grid grid-cols-[2fr_2fr_1.5fr] gap-8 items-center group-hover:scale-95 transition-transform duration-150 ease-in"
+              <div
+                onClick={() => router.push(`/projects/${project.slug}`)}
+                className="grid grid-cols-[2fr_2fr_1.5fr] gap-8 items-center group-hover:scale-95 transition-transform duration-150 ease-in cursor-pointer"
               >
                 <picture className="w-full aspect-video rounded-lg overflow-hidden">
                   <Image
@@ -162,10 +164,10 @@ export default function Projects() {
                     {(index + 1).toString().padStart(2, '0')}
                   </h3>
                 </div>
-              </Link>
+              </div>
             </div>
             {projectsData.length !== index + 1 && <Divider className="my-4" />}
-          </>
+          </Fragment>
         ))}
       </div>
     </Section>
