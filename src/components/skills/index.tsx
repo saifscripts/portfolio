@@ -1,8 +1,10 @@
 'use client';
 
+import { Section, SectionHeader } from '@/components/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
-import { Popover, PopoverContent, PopoverTrigger } from '@nextui-org/popover';
+import { Tooltip } from '@nextui-org/tooltip';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ISkill {
   category: string;
@@ -210,23 +212,14 @@ export default function Skills() {
   const ref = useHashSync('#skills');
 
   return (
-    <section
-      ref={ref}
-      id="skills"
-      className="w-full scroll-mt-16 container py-8 sm:py-12 border-t border-divider"
-    >
-      <h1 className="text-center text-5xl font-bold bg-gradient-to-r from-primary/90 via-secondary/90 to-success/90 inline-block text-transparent bg-clip-text">
-        Skills_
-      </h1>
+    <Section ref={ref} id="skills">
+      <SectionHeader title=" Skills_" description="Explore My Skills" />
       {skillsData.map((category) => (
-        <section
-          key={category.category}
-          className="mt-16 grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-2"
-        >
+        <section key={category.category} className="mt-16 space-y-8">
           <h2 className="text-2xl font-bold text-success">
             {category.category}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {category.skills.map((skill) => {
               const years =
                 (skill?.experiences &&
@@ -236,15 +229,15 @@ export default function Skills() {
               return (
                 <div
                   key={skill.name}
-                  className="border hover:border-none border-divider bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-4 space-y-4 cursor-pointer hover:bg-gradient-to-r hover:from-primary/40 hover:to-secondary/40 hover:shadow-xl"
+                  className="border hover:border-transparent border-divider bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-4 space-y-4 cursor-pointer hover:bg-gradient-to-r hover:from-primary/40 hover:to-secondary/40 hover:shadow-xl"
                 >
                   <div className="flex items-center gap-4">
                     <Image
                       src={skill.icon}
                       width={40}
                       height={40}
-                      className="size-10"
-                      alt="Next Icon"
+                      className="size-10 rounded-lg"
+                      alt={skill.name}
                     />
 
                     <h3 className="text-lg font-semibold text-foreground">
@@ -253,48 +246,60 @@ export default function Skills() {
                   </div>
                   <div className="flex gap-2 justify-end">
                     {skill?.projects && skill?.projects.length > 0 && (
-                      <Popover>
-                        <PopoverTrigger>
-                          <button className="cursor-pointer text-[10px] flex gap-2">
-                            <span className="hover:underline">
-                              {`${skill.projects.length}+ projects`}
-                            </span>
-                            <span>|</span>
-                          </button>
-                        </PopoverTrigger>
-                        <PopoverContent>
-                          <div>
-                            <h4 className="font-medium">Projects:</h4>
-                            <ul className="list-disc ml-6">
+                      <Tooltip
+                        content={
+                          <div className="p-2 space-y-2">
+                            <h4>Projects:</h4>
+                            <ul className="list-disc ml-6 space-y-1">
                               {skill?.projects.map((project) => (
-                                <li key={project.name}>{project.name}</li>
+                                <li key={project.name}>
+                                  <Link
+                                    className="hover:underline"
+                                    href={`/projects/${project.slug}`}
+                                  >
+                                    {project.name}
+                                  </Link>
+                                </li>
                               ))}
                             </ul>
                           </div>
-                        </PopoverContent>
-                      </Popover>
+                        }
+                      >
+                        <button className="cursor-pointer text-[10px] flex gap-2">
+                          <span className="hover:underline">
+                            {`${skill.projects.length}+ projects`}
+                          </span>
+                          <span>|</span>
+                        </button>
+                      </Tooltip>
                     )}
                     {skill?.experiences && skill?.experiences.length > 0 && (
-                      <Popover>
-                        <PopoverTrigger>
-                          <button className="cursor-pointer text-[10px] flex gap-2">
-                            <span className="hover:underline">
-                              {`${years}+ years`}
-                            </span>
-                            <span>|</span>
-                          </button>
-                        </PopoverTrigger>
-                        <PopoverContent>
-                          <div>
-                            <h4 className="font-medium">Companies:</h4>
-                            <ul className="list-disc ml-6">
-                              {skill?.experiences.map((project) => (
-                                <li key={project.company}>{project.company}</li>
+                      <Tooltip
+                        content={
+                          <div className="p-2 space-y-2">
+                            <h4>Companies:</h4>
+                            <ul className="list-disc ml-6 space-y-1">
+                              {skill?.experiences.map((exp) => (
+                                <li key={exp.company}>
+                                  <Link
+                                    className="hover:underline"
+                                    href={`/#${exp.slug}`}
+                                  >
+                                    {exp.company}
+                                  </Link>
+                                </li>
                               ))}
                             </ul>
                           </div>
-                        </PopoverContent>
-                      </Popover>
+                        }
+                      >
+                        <button className="cursor-pointer text-[10px] flex gap-2">
+                          <span className="hover:underline">
+                            {`${years}+ years`}
+                          </span>
+                          <span>|</span>
+                        </button>
+                      </Tooltip>
                     )}
                   </div>
                 </div>
@@ -303,6 +308,6 @@ export default function Skills() {
           </div>
         </section>
       ))}
-    </section>
+    </Section>
   );
 }
