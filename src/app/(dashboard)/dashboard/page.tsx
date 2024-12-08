@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import sidebarGrid from '../_components/sidebarGrid';
+import sidebarGrid from '../../../components/dashboard/sidebar/sidebarGrid';
 
 export default async function DashboardPage() {
   return (

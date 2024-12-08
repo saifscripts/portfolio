@@ -1,5 +1,6 @@
 import { Button } from '@nextui-org/button';
 import { cn } from '@nextui-org/theme';
+import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
 interface IProps {
@@ -17,6 +18,7 @@ interface IProps {
     | 'success'
     | 'warning'
     | 'danger';
+  startContent?: React.ReactNode;
 }
 
 export default function Submit({
@@ -24,6 +26,7 @@ export default function Submit({
   isLoading,
   className,
   disabled,
+  color = 'primary',
   ...props
 }: IProps) {
   const {
@@ -35,6 +38,7 @@ export default function Submit({
       isLoading={isSubmitting || isLoading}
       disabled={disabled || isSubmitting || isLoading}
       type="submit"
+      color={color}
       className={cn('w-full', className)}
       {...props}
     >

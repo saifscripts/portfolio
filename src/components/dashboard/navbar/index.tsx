@@ -19,7 +19,7 @@ import { menuItems } from './menu-items';
 import MenuItems from './MenuItems';
 import NavbarDropdown from './navbar-dropdown';
 
-export const Navbar = () => {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -92,4 +92,4 @@ export const Navbar = () => {
       </NavbarMenu>
     </NextUINavbar>
   );
-};
+}

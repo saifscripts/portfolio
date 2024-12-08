@@ -1,9 +1,9 @@
 import {
   CalculatorIcon,
-  CrownIcon,
   HomeIcon,
   ListIcon,
   PlusIcon,
+  UserPenIcon,
   UsersIcon,
 } from 'lucide-react';
 
@@ -17,9 +17,9 @@ const sidebarLinks = [
         path: '/dashboard',
       },
       {
-        title: 'My Subscriptions',
-        icon: <CrownIcon size={16} />,
-        path: '/dashboard/my-subscriptions',
+        title: 'Basic Info',
+        icon: <UserPenIcon size={16} />,
+        path: '/dashboard/basic-info',
       },
       {
         title: 'Nutrition Calculator',

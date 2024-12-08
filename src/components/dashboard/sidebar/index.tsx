@@ -4,7 +4,7 @@ import { Divider } from '@nextui-org/divider';
 import { Fragment } from 'react';
 import sidebarLinks from './sidebarLinks';
 
-export default async function Sidebar() {
+export default function Sidebar() {
   return (
     <aside className="hidden lg:block w-[300px] h-full overflow-y-auto border-r border-divider p-4">
       {sidebarLinks.map((menu) => (

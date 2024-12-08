@@ -21,6 +21,8 @@ interface IProps {
   startContent?: React.ReactNode;
   endContent?: React.ReactNode;
   className?: string;
+  minRows?: number;
+  maxRows?: number;
 }
 
 export default function Textarea({
