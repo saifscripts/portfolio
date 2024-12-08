@@ -8,10 +8,11 @@ import {
   Navbar as NextUINavbar,
 } from '@nextui-org/navbar';
 
+import { Logo } from '@/components/shared/logo';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { Link } from '@nextui-org/link';
 import { cn } from '@nextui-org/theme';
-import { PawPrintIcon } from 'lucide-react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { menuItems } from './menu-items';
@@ -32,11 +33,14 @@ export const Navbar = () => {
     >
       <NavbarContent className="basis-1/5 md:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <Link className="flex justify-start items-center gap-2" href="/">
-            <PawPrintIcon className="w-6 h-6" />
-            <p className="font-semibold text-inherit">
-              <span className="text-primary-500">PAW</span>SOME
-            </p>
+          <Link
+            href="/#home"
+            // onClick={() => setHash('')}
+            className="flex items-center gap-2"
+            color="foreground"
+          >
+            <Logo />
+            <p className="font-bold text-inherit">SAIF</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -47,7 +51,7 @@ export const Navbar = () => {
           justify="center"
         >
           {menuItems.map((item, index) => (
-            <Link
+            <NextLink
               key={`${item}-${index}`}
               color="foreground"
               href={item.href}
@@ -55,7 +59,7 @@ export const Navbar = () => {
               className="text-sm"
             >
               {item.label}
-            </Link>
+            </NextLink>
           ))}
         </NavbarContent>
       )}

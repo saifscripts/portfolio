@@ -1,5 +1,7 @@
 'use client';
 
+import Background from '@/components/background';
+import { Logo } from '@/components/shared/logo';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { useHash } from '@/contexts/hash.context';
 import { Link } from '@nextui-org/link';
@@ -14,8 +16,6 @@ import {
 } from '@nextui-org/navbar';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import Background from '../background';
-import { Logo } from './logo';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
