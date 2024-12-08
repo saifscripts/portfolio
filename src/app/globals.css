@@ -12,3 +12,11 @@ html,
 body {
   @apply scroll-smooth;
 }
+
+.article {
+  all: revert;
+}
+
+.article * {
+  all: revert;
+}

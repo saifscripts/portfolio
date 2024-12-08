@@ -23,7 +23,15 @@ export default function Navbar() {
   const { hash } = useHash();
   const pathnameWithHash = pathname + hash;
 
-  const menuItems = ['Home', 'About', 'Skills', 'Projects', 'Blogs', 'Contact'];
+  const menuItems = [
+    'Home',
+    'About',
+    'Skills',
+    'Projects',
+    'Education',
+    'Blogs',
+    'Contact',
+  ];
 
   return (
     <NextUINavbar
