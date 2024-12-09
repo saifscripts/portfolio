@@ -1,3 +1,5 @@
+import { fetchProfile } from '@/services/profile.service';
+import { IProfileResponse } from '@/types';
 import {
   GithubIcon,
   LinkedinIcon,
@@ -6,34 +8,39 @@ import {
   XIcon,
 } from 'lucide-react';
 
-const socialLinks = [
-  {
-    icon: <GithubIcon size={24} />,
-    url: 'https://github.com/saifscripts',
-  },
-  {
-    icon: <LinkedinIcon size={24} />,
-    url: 'https://linkedin.com/in/saifscripts',
-  },
-  {
-    icon: <XIcon size={24} />,
-    url: 'https://x.com/saifscripts',
-  },
-  {
-    icon: <PhoneIcon size={24} />,
-    url: 'tel:+8801766637772',
-  },
-  {
-    icon: <MailIcon size={24} />,
-    url: 'mailto:mdsaifullah1302@gmail.com',
-  },
-];
+export default async function Footer() {
+  const { data: profileInfo } = await fetchProfile<IProfileResponse>();
 
-export default function Footer() {
+  const { name, github, linkedin, x, phone, email } = profileInfo;
+
+  const socialLinks = [
+    {
+      icon: <GithubIcon size={24} />,
+      url: github,
+    },
+    {
+      icon: <LinkedinIcon size={24} />,
+      url: linkedin,
+    },
+    {
+      icon: <XIcon size={24} />,
+      url: x,
+    },
+    {
+      icon: <PhoneIcon size={24} />,
+      url: `tel:${phone}`,
+    },
+    {
+      icon: <MailIcon size={24} />,
+      url: `mailto:${email}`,
+    },
+  ];
   return (
     <footer className="py-8 px-4 space-y-4">
       <div className="text-center">
-        <p className="text-sm">© 2024 Saifullah. All rights reserved.</p>
+        <p className="text-sm">{`© ${new Date().getFullYear()} ${
+          name.firstName
+        } ${name.middleName} ${name.lastName}. All rights reserved.`}</p>
       </div>
       <div className="flex gap-4 justify-center items-center">
         {socialLinks.map((link, index) => (

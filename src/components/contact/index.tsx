@@ -7,6 +7,7 @@ import Textarea from '@/components/form/Textarea';
 import { Section, SectionHeader } from '@/components/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
 import { contactSchema } from '@/schemas/contact.schema';
+import { IProfile } from '@/types';
 import { Divider } from '@nextui-org/divider';
 import { motion } from 'framer-motion';
 import { MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
@@ -24,8 +25,10 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function Contact() {
+export default function Contact({ profileInfo }: { profileInfo: IProfile }) {
   const ref = useHashSync('#contact');
+
+  const { phone, email, address } = profileInfo;
 
   return (
     <Section ref={ref} id="contact">
@@ -47,7 +50,7 @@ export default function Contact() {
               <PhoneIcon className="w-8 h-8 text-primary-500" />
             </div>
             <p className="text-default-700 font-semibold">
-              <span>+88 017 66637772</span>
+              <span>{phone}</span>
             </p>
           </motion.div>
           <motion.div
@@ -59,7 +62,7 @@ export default function Contact() {
               <MailIcon className="w-8 h-8 text-primary-500" />
             </div>
             <p className="text-default-700 font-semibold">
-              <span>mdsaifullah130@gmail.com</span>
+              <span>{email}</span>
             </p>
           </motion.div>
           <motion.div
@@ -71,7 +74,7 @@ export default function Contact() {
               <MapPinIcon className="w-8 h-8 text-primary-500" />
             </div>
             <p className="text-default-700 font-semibold">
-              <span>Chattogram, Bangladesh</span>
+              <span>{address}</span>
             </p>
           </motion.div>
         </div>
