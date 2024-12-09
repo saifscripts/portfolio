@@ -6,7 +6,7 @@ const NameSchema = z.object({
   lastName: z.string().min(1, 'Last name is required'),
 });
 
-export const UpdateBasicInfoSchema = z.object({
+export const UpdateProfileSchema = z.object({
   name: NameSchema,
   designation: z.string().min(1, 'Designation is required'),
   photo: z.string().url('Photo must be a valid URL'),

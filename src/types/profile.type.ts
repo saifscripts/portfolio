@@ -6,7 +6,7 @@ interface IName {
   lastName: string;
 }
 
-export interface IBasicInfo {
+export interface IProfile {
   _id: string;
   name: IName;
   designation: string;
@@ -22,4 +22,4 @@ export interface IBasicInfo {
   x: string;
 }
 
-export type IBasicInfoResponse = IResponse<IBasicInfo>;
+export type IProfileResponse = IResponse<IProfile>;

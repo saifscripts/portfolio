@@ -17,9 +17,9 @@ const sidebarLinks = [
         path: '/dashboard',
       },
       {
-        title: 'Basic Info',
+        title: 'Edit Profile',
         icon: <UserPenIcon size={16} />,
-        path: '/dashboard/basic-info',
+        path: '/dashboard/edit-profile',
       },
       {
         title: 'Nutrition Calculator',

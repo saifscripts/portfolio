@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, use, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const HashContext = createContext<
   | undefined
@@ -31,7 +31,7 @@ export const HashProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const useHash = () => {
-  const context = use(HashContext);
+  const context = useContext(HashContext);
 
   if (!context) {
     throw new Error('useHash must be used within a HashProvider');

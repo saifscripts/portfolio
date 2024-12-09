@@ -1,4 +1,4 @@
-import env from '@/config/env';
+import env from '@/configs/env';
 import { cookies } from 'next/headers';
 
 import _axios from 'axios';
