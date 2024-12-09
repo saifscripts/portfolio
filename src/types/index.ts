@@ -1,2 +1,2 @@
-export * from './basic-info.type';
 export * from './global.type';
+export * from './profile.type';

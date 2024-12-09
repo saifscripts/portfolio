@@ -1,11 +1,4 @@
-import {
-  CalculatorIcon,
-  HomeIcon,
-  ListIcon,
-  PlusIcon,
-  UserPenIcon,
-  UsersIcon,
-} from 'lucide-react';
+import { HomeIcon, ListIcon, PlusIcon, UserPenIcon } from 'lucide-react';
 
 const sidebarLinks = [
   {
@@ -21,40 +14,20 @@ const sidebarLinks = [
         icon: <UserPenIcon size={16} />,
         path: '/dashboard/edit-profile',
       },
-      {
-        title: 'Nutrition Calculator',
-        icon: <CalculatorIcon size={16} />,
-        path: '/dashboard/nutrition-calculator',
-      },
     ],
   },
   {
-    title: 'Posts',
+    title: 'Skills',
     links: [
       {
-        title: 'Create Post',
+        title: 'Skill Categories',
         icon: <PlusIcon size={16} />,
-        path: '/dashboard/create-post',
+        path: '/dashboard/skill-categories',
       },
       {
-        title: 'My Posts',
+        title: 'Skills',
         icon: <ListIcon size={16} />,
-        path: '/dashboard/my-posts',
-      },
-    ],
-  },
-  {
-    title: 'Users',
-    links: [
-      {
-        title: 'Followers',
-        icon: <UsersIcon size={16} />,
-        path: '/dashboard/followers',
-      },
-      {
-        title: 'Following',
-        icon: <UsersIcon size={16} />,
-        path: '/dashboard/following',
+        path: '/dashboard/skills',
       },
     ],
   },
