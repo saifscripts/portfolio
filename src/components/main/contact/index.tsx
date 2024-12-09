@@ -1,10 +1,10 @@
 'use client';
 
-import Form from '@/components/form/Form';
-import Input from '@/components/form/Input';
-import Submit from '@/components/form/Submit';
-import Textarea from '@/components/form/Textarea';
-import { Section, SectionHeader } from '@/components/section';
+import Form from '@/components/ui/form/Form';
+import Input from '@/components/ui/form/Input';
+import Submit from '@/components/ui/form/Submit';
+import Textarea from '@/components/ui/form/Textarea';
+import { Section, SectionHeader } from '@/components/ui/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
 import { contactSchema } from '@/schemas/contact.schema';
 import { IProfile } from '@/types';

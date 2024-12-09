@@ -1,4 +1,5 @@
-import Navbar from '@/components/navbar';
+import Navbar from '@/components/main/navbar';
+import Background from '@/components/shared/background';
 import React from 'react';
 
 export default function HomeLayout({
@@ -8,6 +9,7 @@ export default function HomeLayout({
 }>) {
   return (
     <>
+      <Background />
       <Navbar />
       <main>{children}</main>
     </>

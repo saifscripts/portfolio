@@ -1,9 +1,9 @@
 'use client';
 
-import Form from '@/components/form/Form';
-import Input from '@/components/form/Input';
-import Submit from '@/components/form/Submit';
-import Textarea from '@/components/form/Textarea';
+import Form from '@/components/ui/form/Form';
+import Input from '@/components/ui/form/Input';
+import Submit from '@/components/ui/form/Submit';
+import Textarea from '@/components/ui/form/Textarea';
 import { useGetProfile, useUpdateProfile } from '@/hooks/profile.hook';
 import { UpdateProfileSchema } from '@/schemas/profile.schema';
 import { SaveIcon, UserPenIcon } from 'lucide-react';

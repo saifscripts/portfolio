@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/navbar';
 
 import { Logo } from '@/components/shared/logo';
-import { ThemeSwitcher } from '@/components/theme-switcher';
+import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 import { Link } from '@nextui-org/link';
 import { cn } from '@nextui-org/theme';
 import NextLink from 'next/link';

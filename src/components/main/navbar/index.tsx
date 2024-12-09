@@ -1,8 +1,8 @@
 'use client';
 
-import Background from '@/components/background';
+import Background from '@/components/shared/background';
 import { Logo } from '@/components/shared/logo';
-import { ThemeSwitcher } from '@/components/theme-switcher';
+import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 import { useHash } from '@/contexts/hash.context';
 import { Link } from '@nextui-org/link';
 import {

@@ -1,6 +1,6 @@
 'use client';
 
-import { Section, SectionHeader } from '@/components/section';
+import { Section, SectionHeader } from '@/components/ui/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
 import BlogCard from './BlogCard';
 

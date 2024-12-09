@@ -1,11 +1,11 @@
-import About from '@/components/about';
-import Blogs from '@/components/blogs';
-import Contact from '@/components/contact';
-import Education from '@/components/education';
-import Footer from '@/components/footer';
-import Hero from '@/components/hero';
-import Projects from '@/components/projects';
-import Skills from '@/components/skills';
+import About from '@/components/main/about';
+import Blogs from '@/components/main/blogs';
+import Contact from '@/components/main/contact';
+import Education from '@/components/main/education';
+import Footer from '@/components/main/footer';
+import Hero from '@/components/main/hero';
+import Projects from '@/components/main/projects';
+import Skills from '@/components/main/skills';
 import { fetchProfile } from '@/services/profile.service';
 
 export default async function Home() {

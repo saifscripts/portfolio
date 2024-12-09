@@ -1,7 +1,7 @@
 'use client';
-import Form from '@/components/form/Form';
-import Input from '@/components/form/Input';
-import Submit from '@/components/form/Submit';
+import Form from '@/components/ui/form/Form';
+import Input from '@/components/ui/form/Input';
+import Submit from '@/components/ui/form/Submit';
 import { useForgetPassword } from '@/hooks/auth.hook';
 import { forgetPasswordSchema } from '@/schemas/auth.schema';
 import Link from 'next/link';

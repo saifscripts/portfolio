@@ -1,6 +1,6 @@
 'use client';
 
-import { Section, SectionHeader } from '@/components/section';
+import { Section, SectionHeader } from '@/components/ui/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
 import { Button } from '@nextui-org/button';
 import { Divider } from '@nextui-org/divider';

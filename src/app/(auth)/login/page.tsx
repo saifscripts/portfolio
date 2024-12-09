@@ -1,8 +1,8 @@
 'use client';
 
-import Form from '@/components/form/Form';
-import Input from '@/components/form/Input';
-import Submit from '@/components/form/Submit';
+import Form from '@/components/ui/form/Form';
+import Input from '@/components/ui/form/Input';
+import Submit from '@/components/ui/form/Submit';
 import { useUserLogin } from '@/hooks/auth.hook';
 import { loginSchema } from '@/schemas/auth.schema';
 import { FieldValues, SubmitHandler } from 'react-hook-form';

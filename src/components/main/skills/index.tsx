@@ -1,6 +1,6 @@
 'use client';
 
-import { Section, SectionHeader } from '@/components/section';
+import { Section, SectionHeader } from '@/components/ui/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
 import { Tooltip } from '@nextui-org/tooltip';
 import Image from 'next/image';

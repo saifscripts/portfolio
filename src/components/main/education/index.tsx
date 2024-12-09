@@ -1,9 +1,9 @@
 'use client';
 
-import { Section, SectionHeader } from '@/components/section';
+import { Section, SectionHeader } from '@/components/ui/section';
 import { useHashSync } from '@/hooks/hash-sync.hook';
 import { BookOpenIcon, CheckCircleIcon, UniversityIcon } from 'lucide-react';
-import { Timeline } from '../ui/timeline';
+import { Timeline } from '../../ui/timeline';
 
 const educationData = [
   {
