@@ -1,5 +1,4 @@
-import { fetchProfile } from '@/services/profile.service';
-import { IProfileResponse } from '@/types';
+import { IProfile } from '@/types';
 import {
   GithubIcon,
   LinkedinIcon,
@@ -8,9 +7,7 @@ import {
   XIcon,
 } from 'lucide-react';
 
-export default async function Footer() {
-  const { data: profileInfo } = await fetchProfile<IProfileResponse>();
-
+export default function Footer({ profileInfo }: { profileInfo: IProfile }) {
   const { name, github, linkedin, x, phone, email } = profileInfo;
 
   const socialLinks = [

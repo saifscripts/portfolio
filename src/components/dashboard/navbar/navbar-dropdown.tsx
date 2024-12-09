@@ -1,5 +1,6 @@
 'use client';
 
+import { useAuth } from '@/contexts/auth.context';
 import { Avatar } from '@nextui-org/avatar';
 import {
   Dropdown,
@@ -12,27 +13,10 @@ import { useRouter } from 'next/navigation';
 
 export default function NavbarDropdown() {
   const router = useRouter();
-  //   const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
 
   const handleClick = (link: string) => {
     router.push(link);
-  };
-
-  //   if (!user) {
-  //     return (
-  //       <Link href="/login" className="hidden sm:block">
-  //         <Button variant="solid" color="primary" className="rounded-lg">
-  //           Sign in
-  //         </Button>
-  //       </Link>
-  //     );
-  //   }
-
-  const user = {
-    _id: '123',
-    avatarURL: '',
-    name: 'Saif Ullah',
-    email: 'mdsaifullah1302@gmail.com',
   };
 
   return (
@@ -48,7 +32,7 @@ export default function NavbarDropdown() {
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">
         <DropdownItem
-          onClick={() => handleClick(`/profile/${user._id}`)}
+          onClick={() => handleClick(`/dashboard/edit-profile`)}
           key="profile"
           className="h-14 gap-2 opacity-100"
         >
@@ -65,16 +49,10 @@ export default function NavbarDropdown() {
             }}
           />
         </DropdownItem>
-        <DropdownItem
-          key="profile"
-          onClick={() => handleClick(`/profile/${user._id}`)}
-        >
-          Profile
-        </DropdownItem>
         <DropdownItem key="dashboard" onClick={() => handleClick('/dashboard')}>
           Dashboard
         </DropdownItem>
-        <DropdownItem key="logout" onClick={() => {}}>
+        <DropdownItem key="logout" onClick={logout}>
           Logout
         </DropdownItem>
       </DropdownMenu>

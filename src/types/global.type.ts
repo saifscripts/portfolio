@@ -10,8 +10,3 @@ export interface IResponse<T> {
     limit: number;
   };
 }
-
-export type IAuthResponse = IResponse<{
-  accessToken: string;
-  refreshToken: string;
-}>;

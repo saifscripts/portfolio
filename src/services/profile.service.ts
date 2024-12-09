@@ -5,7 +5,7 @@ import axios from '@/lib/axios';
 import { IProfileResponse } from '@/types';
 import { FieldValues } from 'react-hook-form';
 
-export const fetchProfile = async <T>(): Promise<T> => {
+export const fetchProfile = async (): Promise<IProfileResponse> => {
   const res = await fetch(`${env.base_url}/profile/`, {
     next: {
       tags: ['profile'],
