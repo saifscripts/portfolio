@@ -1,5 +1,5 @@
+import { menuItems } from '@/components/dashboard/navbar/menu-items';
 import Link from 'next/link';
-import sidebarGrid from '../../../components/dashboard/sidebar/sidebarGrid';
 
 export default async function DashboardPage() {
   return (
@@ -9,7 +9,7 @@ export default async function DashboardPage() {
       </h1>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-full max-w-3xl px-4">
-        {sidebarGrid.flatMap((link) => (
+        {menuItems.flatMap((link) => (
           <Link
             key={link.path}
             href={link.path}

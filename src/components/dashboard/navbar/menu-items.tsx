@@ -1,30 +1,41 @@
+import {
+  FileCode2Icon,
+  MonitorPlayIcon,
+  NotebookPenIcon,
+  NotebookTextIcon,
+  PlusIcon,
+  UserPenIcon,
+} from 'lucide-react';
+
 export const menuItems = [
   {
-    label: 'Dashboard',
-    href: '/dashboard',
+    title: 'Edit Profile',
+    icon: <UserPenIcon size={16} />,
+    path: '/dashboard/edit-profile',
   },
   {
-    label: 'My Subscriptions',
-    href: '/dashboard/my-subscriptions',
+    title: 'Skills',
+    icon: <FileCode2Icon size={16} />,
+    path: '/dashboard/skills',
   },
   {
-    label: 'Nutrition Calculator',
-    href: '/dashboard/nutrition-calculator',
+    title: 'Add Project',
+    icon: <PlusIcon size={16} />,
+    path: '/dashboard/projects/add-project',
   },
   {
-    label: 'Create Post',
-    href: '/dashboard/create-post',
+    title: 'Projects',
+    icon: <MonitorPlayIcon size={16} />,
+    path: '/dashboard/projects',
   },
   {
-    label: 'My Posts',
-    href: '/dashboard/my-posts',
+    title: 'Create Blog',
+    icon: <NotebookPenIcon size={16} />,
+    path: '/dashboard/blogs/create-blog',
   },
   {
-    label: 'Followers',
-    href: '/dashboard/followers',
-  },
-  {
-    label: 'Following',
-    href: '/dashboard/following',
+    title: 'Blogs',
+    icon: <NotebookTextIcon size={16} />,
+    path: '/dashboard/blogs',
   },
 ];

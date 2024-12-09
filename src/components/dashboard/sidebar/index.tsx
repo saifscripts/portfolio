@@ -2,7 +2,7 @@ import SidebarItem from '@/components/dashboard/sidebar/SidebarItem';
 import SidebarMenu from '@/components/dashboard/sidebar/SidebarMenu';
 import { Divider } from '@nextui-org/divider';
 import { Fragment } from 'react';
-import sidebarLinks from './sidebarLinks';
+import { sidebarLinks } from './sidebarLinks';
 
 export default function Sidebar() {
   return (

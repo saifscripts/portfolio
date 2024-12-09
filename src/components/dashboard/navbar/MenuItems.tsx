@@ -16,10 +16,10 @@ export default function MenuItems({
         <NavbarMenuItem key={`${item}-${index}`}>
           <Link
             color="foreground"
-            href={item.href}
+            href={item.path}
             onClick={() => setIsMenuOpen(false)}
           >
-            {item.label}
+            {item.title}
           </Link>
         </NavbarMenuItem>
       ))}

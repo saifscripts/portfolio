@@ -1,6 +1,15 @@
-import { HomeIcon, ListIcon, PlusIcon, UserPenIcon } from 'lucide-react';
+import {
+  FileCode2Icon,
+  HomeIcon,
+  LogsIcon,
+  MonitorPlayIcon,
+  NotebookPenIcon,
+  NotebookTextIcon,
+  PlusIcon,
+  UserPenIcon,
+} from 'lucide-react';
 
-const sidebarLinks = [
+export const sidebarLinks = [
   {
     title: 'Menu',
     links: [
@@ -20,17 +29,45 @@ const sidebarLinks = [
     title: 'Skills',
     links: [
       {
-        title: 'Skill Categories',
-        icon: <PlusIcon size={16} />,
-        path: '/dashboard/skill-categories',
+        title: 'Categories',
+        icon: <LogsIcon size={16} />,
+        path: '/dashboard/skills/categories',
       },
       {
         title: 'Skills',
-        icon: <ListIcon size={16} />,
+        icon: <FileCode2Icon size={16} />,
         path: '/dashboard/skills',
       },
     ],
   },
+  {
+    title: 'Projects',
+    links: [
+      {
+        title: 'Add Project',
+        icon: <PlusIcon size={16} />,
+        path: '/dashboard/projects/add-project',
+      },
+      {
+        title: 'Projects',
+        icon: <MonitorPlayIcon size={16} />,
+        path: '/dashboard/projects',
+      },
+    ],
+  },
+  {
+    title: 'Blogs',
+    links: [
+      {
+        title: 'Create Blog',
+        icon: <NotebookPenIcon size={16} />,
+        path: '/dashboard/blogs/create-blog',
+      },
+      {
+        title: 'Blogs',
+        icon: <NotebookTextIcon size={16} />,
+        path: '/dashboard/blogs',
+      },
+    ],
+  },
 ];
-
-export default sidebarLinks;
